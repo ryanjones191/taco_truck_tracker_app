@@ -1,0 +1,26 @@
+<header class="page-header">
+   <nav class = "navbar navbar-default" role = "navigation">
+      <div class="container">
+          <%= render 'layouts/auth' %>
+         <div class = "navbar-header">
+            <button type = "button" class = "navbar-toggle" 
+                    data-toggle = "collapse" data-target = "#example-navbar-collapse">
+              <span class = "sr-only">Toggle navigation</span>
+              <span class = "icon-bar"></span>
+              <span class = "icon-bar"></span>
+              <span class = "icon-bar"></span>
+            </button>
+            <%= link_to("Taco Truck Tracker", root_path , class: "navbar-brand") %>
+            </div>
+
+            <div class = "collapse navbar-collapse pull-right" id = "example-navbar-collapse">
+              <ul class = "nav navbar-nav">
+                <li><%= link_to "Home", root_path, class: 'navbar-text', 'data-no-turbolink' => true %></li>
+                <li><%= link_to("About", "/about" , class: 'navbar-text') %></li>
+                <li><%= link_to("Contact", "/contact" , class: 'navbar-text') %></li>
+                
+              </ul>
+         </div> 
+      </div>
+   </nav>
+</header>

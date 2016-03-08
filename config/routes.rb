@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   delete 'logout'         =>    'user_sessions#destroy'
   get    'register'       =>    'vendors#new'
 
-  resources :users
+  resources :users, :vendors
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

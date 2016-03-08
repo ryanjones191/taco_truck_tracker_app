@@ -5,8 +5,8 @@ class VendorTest < ActiveSupport::TestCase
   #   assert true
   # end
   def setup
-    @vendor = Vendor.new(username: "Example", email: "user@example.com", password: "password",
-    	                        password_confirmation: "password")
+    @vendor = Vendor.new(username: "Example", email: "user@example.com", company: "Stuff",
+                              password: "password", password_confirmation: "password")
   end
 
   test "should be valid" do

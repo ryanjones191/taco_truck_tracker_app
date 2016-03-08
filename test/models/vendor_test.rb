@@ -67,4 +67,8 @@ class VendorTest < ActiveSupport::TestCase
     @vendor.password = @vendor.password_confirmation = "a" * 5
     assert_not @vendor.valid?
   end
+
+  test "vendor_authenticated? should return false for a vendor with nil digest" do
+    assert_not @vendor.vendor_authenticated?('')
+  end
 end

@@ -13,6 +13,11 @@ class ActiveSupport::TestCase
     !session[:user_id].nil?
   end
 
+  # Returns true if a test user is logged in.
+  def vendor_is_logged_in?
+    !session[:vendor_id].nil?
+  end
+
   # Logs in a test user.
   def log_in_as(user, options = {})
     password    = options[:password]    || 'password'
@@ -26,10 +31,27 @@ class ActiveSupport::TestCase
     end
   end
 
+  # Logs in a test user.
+  def vendor_log_in_as(vendor, options = {})
+    password    = options[:password]    || 'password'
+    remember_me = options[:remember_me] || '1'
+    if vendor_integration_test?
+      post vendor_login_path, session: { email:       vendor.email,
+                                  password:    password,
+                                  remember_me: remember_me }
+    else
+      session[:vendor_id] = vendor.id
+    end
+  end
+
   private
 
     # Returns true inside an integration test.
     def integration_test?
+      defined?(post_via_redirect)
+    end
+
+    def vendor_integration_test?
       defined?(post_via_redirect)
     end
 end

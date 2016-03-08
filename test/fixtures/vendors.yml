@@ -1,3 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+stephen:
+  username: steph
+  email: scurry@example.com
+  company: snackable
+  password_digest: <%= Vendor.digest('password') %>
+
+harrison:
+  username: harry
+  email: duchess@example.gov
+  company: junk
+  password_digest: <%= Vendor.digest('password') %>
 
 

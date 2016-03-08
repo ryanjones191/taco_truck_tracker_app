@@ -10,6 +10,7 @@ class VendorsController < ApplicationController
   def create
     @vendor = Vendor.new(vendor_params)    #@user = User.new(user_params)
     if @vendor.save
+      vendor_log_in @vendor
       flash[:success] = "Welcome to the T3 App!"
       redirect_to @vendor
     else

@@ -7,10 +7,11 @@ class Vendor < ActiveRecord::Base
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
+  validates :phone, format: { with: /\d{3}-\d{3}-\d{4}/, message: "phone number must be XXX-XXX-XXXX" }
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   has_many :reviews
-
+  mount_uploader :image, ImageUploader
   # Returns the hash digest of the given string.
   def Vendor.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

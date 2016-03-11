@@ -5,6 +5,11 @@ class VendorsController < ApplicationController
 
   def show
     @vendor = Vendor.find(params[:id])
+    @reviews =Review.where(vendor_id: @vendor.id)
+  end
+
+  def edit
+    @vendor = Vendor.find(params[:id])
   end
 
   def create
@@ -18,10 +23,21 @@ class VendorsController < ApplicationController
     end
   end
 
+  def update
+    @vendor = Vendor.find(params[:id])
+    if @vendor.update_attributes(vendor_params)
+      flash[:success] = "Profile updated"
+      redirect_to @vendor 
+    else
+      render 'edit'
+    end
+  end
+
+
   private
 
     def vendor_params
-      params.require(:vendor).permit(:username, :email, :company, :password,
-                                   :password_confirmation)
+      params.require(:vendor).permit(:username, :email, :company, :image, :website,
+                          :password, :password_confirmation, :phone)
     end
 end

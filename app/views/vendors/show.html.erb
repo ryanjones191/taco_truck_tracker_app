@@ -7,7 +7,11 @@
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
-        <%= gravatar_for @vendor %>
+        <% if @vendor.image.blank? %>
+          <%= gravatar_for @vendor %>
+        <% else %>
+          <%= image_tag @vendor.image_url %>
+        <% end %>
         <%= @vendor.username %>
       </h1>
     </section>
@@ -27,6 +31,17 @@
 		<%= link_to "Write a Review", new_vendor_review_path(@vendor), class: "btn btn-primary" %>
 	</div>
 	<div class="col-md-4">
+    <% if @reviews.blank? %>
+      <h3> Be the first to write a review!</h3>
+    <% else %>
+      <% @reviews.each do |review| %>
+        <div class="star-rating" data-score= <%= review.rating %> ></div>
+        <p><%= review.comment %></p>
+      <% end %>
+    <% end %>
+
+
+
 	</div>
 </div>
 
@@ -45,5 +60,13 @@ function displayOnMap(position){
   });
   handler.map.centerOn(marker);
 };
-    
+</script>
+<script>
+  $('.star-rating').raty({
+    path: 'https://s3-us-west-2.amazonaws.com/taco-truck-tracker-app/stars',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });
 </script>

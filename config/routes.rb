@@ -13,7 +13,10 @@ Rails.application.routes.draw do
   post   'vendor_login'          =>    'vendor_sessions#create'
   delete 'vendor_logout'         =>    'vendor_sessions#destroy'
 
-  resources :users, :vendors
+  resources :users
+  resources :vendors do
+    resources :reviews, except: [:show, :index]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

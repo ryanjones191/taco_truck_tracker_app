@@ -3,9 +3,24 @@ class VendorsController < ApplicationController
   	@vendor = Vendor.new
   end
 
+  def index
+    @vendors = Vendor.all
+    @vendors = @vendors.where(status: "true")
+    @pins = Vendor.all
+    @pins = @pins.where(status: "true")
+    @hash = Gmaps4rails.build_markers(@pins) do |pin, marker|
+    marker.lat pin.latitude
+    marker.lng pin.longitude
+  end
+  end
+
   def show
     @vendor = Vendor.find(params[:id])
     @reviews =Review.where(vendor_id: @vendor.id).order("created_at DESC")
+    @hash = Gmaps4rails.build_markers(@vendor) do |vendor, marker|
+      marker.lat vendor.latitude
+      marker.lng vendor.longitude
+    end
   end
 
   def edit
@@ -38,6 +53,7 @@ class VendorsController < ApplicationController
 
     def vendor_params
       params.require(:vendor).permit(:username, :email, :company, :image, :website,
-                          :password, :password_confirmation, :phone, :menu1, :menu2)
+                          :password, :password_confirmation, :phone, :menu1, :menu2, 
+                          :latitude, :longitude)
     end
 end

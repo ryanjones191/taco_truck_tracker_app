@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   
 
-  root                          'pages#home'
+  root                          'vendors#index'
+  get    'welcome'        =>    'pages#home'
   get    'about'          =>    'pages#about'
   get    'contact'        =>    'pages#contact'
   get    'signup'         =>    'users#new'

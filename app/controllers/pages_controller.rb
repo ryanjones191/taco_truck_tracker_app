@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+	#before_action :set_vendor
+
   def home
   end
 
@@ -7,4 +9,6 @@ class PagesController < ApplicationController
 
   def contact
   end
+
+  
 end

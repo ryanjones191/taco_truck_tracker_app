@@ -11,11 +11,17 @@ class Vendor < ActiveRecord::Base
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   validates :website, format: { with: /\Ahttps?:\/\/.*\z/,
-                      message: "must start with http:// or https://" }
+                      message: "must start with http:// or https://" }, allow_nil: true
   has_many :reviews
   mount_uploader :image, ImageUploader
   mount_uploader :menu1, Menu1Uploader
   mount_uploader :menu2, Menu2Uploader
+  #acts_as_gmappable, :process_geocoding => false
+
+
+  geocoded_by :ip_address
+  #after_validation :geocode,
+  #                    :if => lambda{ |obj| obj.address_changed? }
 
   # Returns the hash digest of the given string.
   def Vendor.digest(string)

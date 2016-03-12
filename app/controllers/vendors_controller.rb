@@ -5,7 +5,7 @@ class VendorsController < ApplicationController
 
   def show
     @vendor = Vendor.find(params[:id])
-    @reviews =Review.where(vendor_id: @vendor.id)
+    @reviews =Review.where(vendor_id: @vendor.id).order("created_at DESC")
   end
 
   def edit
@@ -38,6 +38,6 @@ class VendorsController < ApplicationController
 
     def vendor_params
       params.require(:vendor).permit(:username, :email, :company, :image, :website,
-                          :password, :password_confirmation, :phone)
+                          :password, :password_confirmation, :phone, :menu1, :menu2)
     end
 end

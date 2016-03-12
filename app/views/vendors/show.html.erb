@@ -12,15 +12,17 @@
         <% else %>
           <%= image_tag @vendor.image_url %>
         <% end %>
-        <%= @vendor.username %>
+        <h3><%= @vendor.company %></h3>
+        <h4>Website: <%= link_to @vendor.website, @vendor.website %></h4>
+        <h4>Phone: <%= @vendor.phone %></h4>
       </h1>
     </section>
   </aside>
   <div class="col-md-4">
-  	menu
+  	<%= image_tag @vendor.menu1_url %>
   </div>
   <div class="col-md-4">
-  	menu
+  	<%= image_tag @vendor.menu2_url %>
   </div>
 </div>
 <div class="row">
@@ -34,14 +36,33 @@
     <% if @reviews.blank? %>
       <h3> Be the first to write a review!</h3>
     <% else %>
-      <% @reviews.each do |review| %>
-        <div class="star-rating" data-score= <%= review.rating %> ></div>
-        <p><%= review.comment %></p>
-      <% end %>
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="col-md-3"></th>
+            <th class="col-md-9"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @reviews.each do |review| %>
+            <tr>
+              <td>
+                <h4>
+                  <%= "#{review.user.username.capitalize}" %>
+                </h4>
+                <p><%= review.created_at.strftime("%-m/%-d/%-y") %></p>
+              </td>
+
+              <td>
+                <div class="star-rating" data-score= <%= review.rating %> ></div>
+                <p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     <% end %>
-
-
-
 	</div>
 </div>
 

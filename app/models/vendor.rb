@@ -10,8 +10,13 @@ class Vendor < ActiveRecord::Base
   validates :phone, format: { with: /\d{3}-\d{3}-\d{4}/, message: "phone number must be XXX-XXX-XXXX" }
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+  validates :website, format: { with: /\Ahttps?:\/\/.*\z/,
+                      message: "must start with http:// or https://" }
   has_many :reviews
   mount_uploader :image, ImageUploader
+  mount_uploader :menu1, Menu1Uploader
+  mount_uploader :menu2, Menu2Uploader
+
   # Returns the hash digest of the given string.
   def Vendor.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

@@ -9,9 +9,10 @@ class VendorsController < ApplicationController
     @pins = Vendor.all
     @pins = @pins.where(status: "true")
     @hash = Gmaps4rails.build_markers(@pins) do |pin, marker|
-    marker.lat pin.latitude
-    marker.lng pin.longitude
-  end
+      marker.lat pin.latitude
+      marker.lng pin.longitude
+      marker.json({:id => pin.id })
+      marker.infowindow render_to_string(:partial => "/vendors/infowindow", :locals => { :object => pin})    end
   end
 
   def show
@@ -20,6 +21,8 @@ class VendorsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@vendor) do |vendor, marker|
       marker.lat vendor.latitude
       marker.lng vendor.longitude
+
+
     end
   end
 

@@ -1,6 +1,5 @@
 class @InfoBoxBuilder extends Gmaps.Google.Builders.Marker # inherit from base builder
 
-# override method
 create_infowindow: ->
   return null unless _.isString @args.infowindow
   boxText = document.createElement("div")

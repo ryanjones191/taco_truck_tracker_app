@@ -4,6 +4,7 @@
 				<th>Day</th>
 				<th>Open</th>
 				<th>Close</th>
+				<th>Frequent locations</th>
 			</tr>
 		</thead>
 
@@ -16,6 +17,7 @@
 					<% else %>
 						<td><%= @vendor.sun_open %></td>
 						<td><%= @vendor.sun_close %></td>
+						<td><%= @vendor.sun_loc %></td>
 					<% end %>
 				</tr>
 				<tr>
@@ -26,6 +28,7 @@
 					<% else %>
 						<td><%= @vendor.mon_open %></td>
 						<td><%= @vendor.mon_close %></td>
+						<td><%= @vendor.mon_loc %></td>
 					<% end %>
 				</tr>
 				<tr>
@@ -36,6 +39,7 @@
 					<% else %>
 						<td><%= @vendor.tues_open %></td>
 						<td><%= @vendor.tues_close %></td>
+						<td><%= @vendor.tues_loc %></td>
 					<% end %>
 				</tr>
 				<tr>
@@ -46,6 +50,7 @@
 					<% else %>
 						<td><%= @vendor.weds_open %></td>
 						<td><%= @vendor.weds_close %></td>
+						<td><%= @vendor.weds_loc %></td>
 					<% end %>
 				</tr>
 				<tr>
@@ -56,6 +61,7 @@
 					<% else %>
 						<td><%= @vendor.thurs_open %></td>
 						<td><%= @vendor.thurs_close %></td>
+						<td><%= @vendor.thurs_loc %></td>
 					<% end %>
 				</tr>
 				<tr>
@@ -66,6 +72,7 @@
 					<% else %>
 						<td><%= @vendor.fri_open %></td>
 						<td><%= @vendor.fri_close %></td>
+						<td><%= @vendor.fri_loc %></td>
 					<% end %>
 				</tr>
 				<tr>
@@ -76,6 +83,7 @@
 					<% else %>
 						<td><%= @vendor.sat_open %></td>
 						<td><%= @vendor.sat_close %></td>
+						<td><%= @vendor.sat_loc %></td>
 					<% end %>
 				</tr>
 		</tbody>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160316085607) do
+ActiveRecord::Schema.define(version: 20160316171851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,13 @@ ActiveRecord::Schema.define(version: 20160316085607) do
     t.string   "fri_close"
     t.string   "sat_open"
     t.string   "sat_close"
+    t.string   "sun_loc"
+    t.string   "mon_loc"
+    t.string   "tues_loc"
+    t.string   "weds_loc"
+    t.string   "thurs_loc"
+    t.string   "fri_loc"
+    t.string   "sat_loc"
   end
 
   add_index "vendors", ["email"], name: "index_vendors_on_email", unique: true, using: :btree

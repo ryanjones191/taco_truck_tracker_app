@@ -41,6 +41,9 @@
             options_for_select([['T.B.D.', 'T.B.D.'], ['12 A.M.','12 A.M.'],['1 A.M.','1 A.M.'],['2 A.M.','2 A.M.'], ['3 A.M.', '3 A.M.'], ['4 A.M.', '4 A.M.'], ['5 A.M.', '5 A.M.'], ['6 A.M.', '6 A.M.'], ['7 A.M.', '7 A.M.'], ['8 A.M.', '8 A.M.'], ['9 A.M.', '9 A.M.'], ['10 A.M.', '10 A.M.'], ['11 A.M.', '11 A.M.'], ['12 P.M.', '12 P.M.'], ['1 P.M.', '1 P.M.'], ['2 P.M.', '2 P.M.'], ['3 P.M.', '3 P.M.'], ['4 P.M.', '4 P.M.'], ['5 P.M.', '5 P.M.'], ['6 P.M.', '6 P.M.'], ['7 P.M.', '7 P.M.'], ['8 P.M.', '8 P.M.'], ['9 P.M.', '9 P.M.'], ['10 P.M.', '10 P.M.'], ['11 P.M.', '11 P.M.']], params[:sun_open]), 
             {:include_blank => true}, { :class => 'form-control' } %>
 
+      <%= f.label :Sunday_Frequent_Locations %>
+      <%= f.text_field :sun_loc, class: 'form-control' %>
+
       <%= f.label :Sunday_close %>
       <%= f.select :sun_close, 
             options_for_select([['T.B.D.', 'T.B.D.'], ['12 A.M.','12 A.M.'],['1 A.M.','1 A.M.'],['2 A.M.','2 A.M.'], ['3 A.M.', '3 A.M.'], ['4 A.M.', '4 A.M.'], ['5 A.M.', '5 A.M.'], ['6 A.M.', '6 A.M.'], ['7 A.M.', '7 A.M.'], ['8 A.M.', '8 A.M.'], ['9 A.M.', '9 A.M.'], ['10 A.M.', '10 A.M.'], ['11 A.M.', '11 A.M.'], ['12 P.M.', '12 P.M.'], ['1 P.M.', '1 P.M.'], ['2 P.M.', '2 P.M.'], ['3 P.M.', '3 P.M.'], ['4 P.M.', '4 P.M.'], ['5 P.M.', '5 P.M.'], ['6 P.M.', '6 P.M.'], ['7 P.M.', '7 P.M.'], ['8 P.M.', '8 P.M.'], ['9 P.M.', '9 P.M.'], ['10 P.M.', '10 P.M.'], ['11 P.M.', '11 P.M.']], params[:sun_close]), 
@@ -50,6 +53,9 @@
       <%= f.select :mon_open, 
             options_for_select([['T.B.D.', 'T.B.D.'], ['12 A.M.','12 A.M.'],['1 A.M.','1 A.M.'],['2 A.M.','2 A.M.'], ['3 A.M.', '3 A.M.'], ['4 A.M.', '4 A.M.'], ['5 A.M.', '5 A.M.'], ['6 A.M.', '6 A.M.'], ['7 A.M.', '7 A.M.'], ['8 A.M.', '8 A.M.'], ['9 A.M.', '9 A.M.'], ['10 A.M.', '10 A.M.'], ['11 A.M.', '11 A.M.'], ['12 P.M.', '12 P.M.'], ['1 P.M.', '1 P.M.'], ['2 P.M.', '2 P.M.'], ['3 P.M.', '3 P.M.'], ['4 P.M.', '4 P.M.'], ['5 P.M.', '5 P.M.'], ['6 P.M.', '6 P.M.'], ['7 P.M.', '7 P.M.'], ['8 P.M.', '8 P.M.'], ['9 P.M.', '9 P.M.'], ['10 P.M.', '10 P.M.'], ['11 P.M.', '11 P.M.']], params[:mon_open]), 
             {:include_blank => true}, { :class => 'form-control' } %>
+
+      <%= f.label :Monday_Frequent_Locations %>
+      <%= f.text_field :mon_loc, class: 'form-control' %>
 
       <%= f.label :Monday_close %>
       <%= f.select :mon_close, 
@@ -61,6 +67,9 @@
             options_for_select([['T.B.D.', 'T.B.D.'], ['12 A.M.','12 A.M.'],['1 A.M.','1 A.M.'],['2 A.M.','2 A.M.'], ['3 A.M.', '3 A.M.'], ['4 A.M.', '4 A.M.'], ['5 A.M.', '5 A.M.'], ['6 A.M.', '6 A.M.'], ['7 A.M.', '7 A.M.'], ['8 A.M.', '8 A.M.'], ['9 A.M.', '9 A.M.'], ['10 A.M.', '10 A.M.'], ['11 A.M.', '11 A.M.'], ['12 P.M.', '12 P.M.'], ['1 P.M.', '1 P.M.'], ['2 P.M.', '2 P.M.'], ['3 P.M.', '3 P.M.'], ['4 P.M.', '4 P.M.'], ['5 P.M.', '5 P.M.'], ['6 P.M.', '6 P.M.'], ['7 P.M.', '7 P.M.'], ['8 P.M.', '8 P.M.'], ['9 P.M.', '9 P.M.'], ['10 P.M.', '10 P.M.'], ['11 P.M.', '11 P.M.']], params[:tues_open]), 
             {:include_blank => true}, { :class => 'form-control' } %>
 
+      <%= f.label :Tuesday_Frequent_Locations %>
+      <%= f.text_field :tues_loc, class: 'form-control' %>
+
       <%= f.label :Tuesday_close %>
       <%= f.select :tues_close, 
             options_for_select([['T.B.D.', 'T.B.D.'], ['12 A.M.','12 A.M.'],['1 A.M.','1 A.M.'],['2 A.M.','2 A.M.'], ['3 A.M.', '3 A.M.'], ['4 A.M.', '4 A.M.'], ['5 A.M.', '5 A.M.'], ['6 A.M.', '6 A.M.'], ['7 A.M.', '7 A.M.'], ['8 A.M.', '8 A.M.'], ['9 A.M.', '9 A.M.'], ['10 A.M.', '10 A.M.'], ['11 A.M.', '11 A.M.'], ['12 P.M.', '12 P.M.'], ['1 P.M.', '1 P.M.'], ['2 P.M.', '2 P.M.'], ['3 P.M.', '3 P.M.'], ['4 P.M.', '4 P.M.'], ['5 P.M.', '5 P.M.'], ['6 P.M.', '6 P.M.'], ['7 P.M.', '7 P.M.'], ['8 P.M.', '8 P.M.'], ['9 P.M.', '9 P.M.'], ['10 P.M.', '10 P.M.'], ['11 P.M.', '11 P.M.']], params[:tues_close]), 
@@ -70,6 +79,9 @@
       <%= f.select :weds_open, 
             options_for_select([['T.B.D.', 'T.B.D.'], ['12 A.M.','12 A.M.'],['1 A.M.','1 A.M.'],['2 A.M.','2 A.M.'], ['3 A.M.', '3 A.M.'], ['4 A.M.', '4 A.M.'], ['5 A.M.', '5 A.M.'], ['6 A.M.', '6 A.M.'], ['7 A.M.', '7 A.M.'], ['8 A.M.', '8 A.M.'], ['9 A.M.', '9 A.M.'], ['10 A.M.', '10 A.M.'], ['11 A.M.', '11 A.M.'], ['12 P.M.', '12 P.M.'], ['1 P.M.', '1 P.M.'], ['2 P.M.', '2 P.M.'], ['3 P.M.', '3 P.M.'], ['4 P.M.', '4 P.M.'], ['5 P.M.', '5 P.M.'], ['6 P.M.', '6 P.M.'], ['7 P.M.', '7 P.M.'], ['8 P.M.', '8 P.M.'], ['9 P.M.', '9 P.M.'], ['10 P.M.', '10 P.M.'], ['11 P.M.', '11 P.M.']], params[:weds_open]), 
             {:include_blank => true}, { :class => 'form-control' } %>
+
+      <%= f.label :Wednesday_Frequent_Locations %>
+      <%= f.text_field :weds_loc, class: 'form-control' %>
 
       <%= f.label :Wednesday_close %>
       <%= f.select :weds_close, 
@@ -82,6 +94,9 @@
             {:include_blank => true}, { :class => 'form-control' } %>
 
 
+      <%= f.label :Thursday_Frequent_Locations %>
+      <%= f.text_field :thurs_loc, class: 'form-control' %>
+
       <%= f.label :Thursday_close %>
       <%= f.select :thurs_close, 
             options_for_select([['T.B.D.', 'T.B.D.'], ['12 A.M.','12 A.M.'],['1 A.M.','1 A.M.'],['2 A.M.','2 A.M.'], ['3 A.M.', '3 A.M.'], ['4 A.M.', '4 A.M.'], ['5 A.M.', '5 A.M.'], ['6 A.M.', '6 A.M.'], ['7 A.M.', '7 A.M.'], ['8 A.M.', '8 A.M.'], ['9 A.M.', '9 A.M.'], ['10 A.M.', '10 A.M.'], ['11 A.M.', '11 A.M.'], ['12 P.M.', '12 P.M.'], ['1 P.M.', '1 P.M.'], ['2 P.M.', '2 P.M.'], ['3 P.M.', '3 P.M.'], ['4 P.M.', '4 P.M.'], ['5 P.M.', '5 P.M.'], ['6 P.M.', '6 P.M.'], ['7 P.M.', '7 P.M.'], ['8 P.M.', '8 P.M.'], ['9 P.M.', '9 P.M.'], ['10 P.M.', '10 P.M.'], ['11 P.M.', '11 P.M.']], params[:thurs_close]), 
@@ -93,6 +108,9 @@
             {:include_blank => true}, { :class => 'form-control' } %>
 
 
+      <%= f.label :Friday_Frequent_Locations %>
+      <%= f.text_field :fri_loc, class: 'form-control' %>
+
       <%= f.label :Friday_close %>
       <%= f.select :fri_close, 
             options_for_select([['T.B.D.', 'T.B.D.'], ['12 A.M.','12 A.M.'],['1 A.M.','1 A.M.'],['2 A.M.','2 A.M.'], ['3 A.M.', '3 A.M.'], ['4 A.M.', '4 A.M.'], ['5 A.M.', '5 A.M.'], ['6 A.M.', '6 A.M.'], ['7 A.M.', '7 A.M.'], ['8 A.M.', '8 A.M.'], ['9 A.M.', '9 A.M.'], ['10 A.M.', '10 A.M.'], ['11 A.M.', '11 A.M.'], ['12 P.M.', '12 P.M.'], ['1 P.M.', '1 P.M.'], ['2 P.M.', '2 P.M.'], ['3 P.M.', '3 P.M.'], ['4 P.M.', '4 P.M.'], ['5 P.M.', '5 P.M.'], ['6 P.M.', '6 P.M.'], ['7 P.M.', '7 P.M.'], ['8 P.M.', '8 P.M.'], ['9 P.M.', '9 P.M.'], ['10 P.M.', '10 P.M.'], ['11 P.M.', '11 P.M.']], params[:fri_close]), 
@@ -103,6 +121,9 @@
             options_for_select([['T.B.D.', 'T.B.D.'], ['12 A.M.','12 A.M.'],['1 A.M.','1 A.M.'],['2 A.M.','2 A.M.'], ['3 A.M.', '3 A.M.'], ['4 A.M.', '4 A.M.'], ['5 A.M.', '5 A.M.'], ['6 A.M.', '6 A.M.'], ['7 A.M.', '7 A.M.'], ['8 A.M.', '8 A.M.'], ['9 A.M.', '9 A.M.'], ['10 A.M.', '10 A.M.'], ['11 A.M.', '11 A.M.'], ['12 P.M.', '12 P.M.'], ['1 P.M.', '1 P.M.'], ['2 P.M.', '2 P.M.'], ['3 P.M.', '3 P.M.'], ['4 P.M.', '4 P.M.'], ['5 P.M.', '5 P.M.'], ['6 P.M.', '6 P.M.'], ['7 P.M.', '7 P.M.'], ['8 P.M.', '8 P.M.'], ['9 P.M.', '9 P.M.'], ['10 P.M.', '10 P.M.'], ['11 P.M.', '11 P.M.']], params[:sat_open]), 
             {:include_blank => true}, { :class => 'form-control' } %>
 
+
+      <%= f.label :Saturday_Frequent_Locations %>
+      <%= f.text_field :sat_loc, class: 'form-control' %>
 
       <%= f.label :Saturday_close %>
       <%= f.select :sat_close, 

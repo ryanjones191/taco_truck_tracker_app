@@ -42,12 +42,12 @@
 	</aside>
 	<div class="col-md-4">
 		<%= link_to "Write a Review", new_vendor_review_path(@vendor), class: "btn btn-primary" %>
-    <%= render 'vendors/hours' %>
 	</div>
 	<div class="col-md-4">
     <% if @reviews.blank? %>
       <h3> Be the first to write a review!</h3>
     <% else %>
+      <h4> See what others think about us:</h4>
       <table class="table">
         <thead>
           <tr>
@@ -76,6 +76,12 @@
       </table>
     <% end %>
 	</div>
+</div>
+<div class="row">
+  <div class="col-md-8">
+  </br></br>
+    <%= render 'vendors/hours' %>
+  </div>
 </div>
 
 

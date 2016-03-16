@@ -16,9 +16,7 @@ class Vendor < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   mount_uploader :menu1, Menu1Uploader
   mount_uploader :menu2, Menu2Uploader
-  validates :sun_open, presence: true, allow_nil: true
-  validates :mon_open, presence: true, allow_nil: true
-  validates :tues_open, presence: true, allow_nil: true
+  
   
   #acts_as_gmappable, :process_geocoding => false
 

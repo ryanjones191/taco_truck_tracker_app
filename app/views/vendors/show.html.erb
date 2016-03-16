@@ -23,12 +23,18 @@
       </h1>
     </section>
   </aside>
-  <div class="col-md-4">
-  	<%= image_tag @vendor.menu1_url %>
-  </div>
-  <div class="col-md-4">
-  	<%= image_tag @vendor.menu2_url %>
-  </div>
+  <% if @vendor.menu2.blank? %>
+    <div class="col-md-8" > 
+      <%= image_tag @vendor.menu1_url, :class => "center-block", :target => "_blank" %>
+    </div>
+  <% else %>
+    <div class="col-md-4">
+    	<%= image_tag @vendor.menu1_url %>
+    </div>
+    <div class="col-md-4">
+    	<%= image_tag @vendor.menu2_url %>
+    </div>
+  <% end %>
 </div>
 <div class="row">
 	<aside class="col-md-4">

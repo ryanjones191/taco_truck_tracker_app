@@ -10,38 +10,73 @@
 		<tbody>
 				<tr>
 					<td>Sunday</td>
-					<td><%= @vendor.sun_open %></td>
-					<td><%= @vendor.sun_close %></td>
+					<% if @vendor.sun_open.nil? %>
+						<td> Closed</td>
+						<td> Closed</td>
+					<% else %>
+						<td><%= @vendor.sun_open %></td>
+						<td><%= @vendor.sun_close %></td>
+					<% end %>
 				</tr>
 				<tr>
 					<td>Monday</td>
-					<td><%= @vendor.mon_open %></td>
-					<td><%= @vendor.mon_close %></td>
+					<% if @vendor.mon_open.nil? %>
+						<td> Closed</td>
+						<td> Closed</td>
+					<% else %>
+						<td><%= @vendor.mon_open %></td>
+						<td><%= @vendor.mon_close %></td>
+					<% end %>
 				</tr>
 				<tr>
 					<td>Tuesday</td>
-					<td><%= @vendor.tues_open %></td>
-					<td><%= @vendor.tues_close %></td>
+					<% if @vendor.tues_open.nil? %>
+						<td> Closed</td>
+						<td> Closed</td>
+					<% else %>
+						<td><%= @vendor.tues_open %></td>
+						<td><%= @vendor.tues_close %></td>
+					<% end %>
 				</tr>
 				<tr>
 					<td>Wednesday</td>
-					<td><%= @vendor.weds_open %></td>
-					<td><%= @vendor.weds_close %></td>
+					<% if @vendor.weds_open.nil? %>
+						<td> Closed</td>
+						<td> Closed</td>
+					<% else %>
+						<td><%= @vendor.weds_open %></td>
+						<td><%= @vendor.weds_close %></td>
+					<% end %>
 				</tr>
 				<tr>
 					<td>Thursday</td>
-					<td><%= @vendor.thurs_open %></td>
-					<td><%= @vendor.thurs_close %></td>
+					<% if @vendor.thurs_open.nil? %>
+						<td> Closed</td>
+						<td> Closed</td>
+					<% else %>
+						<td><%= @vendor.thurs_open %></td>
+						<td><%= @vendor.thurs_close %></td>
+					<% end %>
 				</tr>
 				<tr>
 					<td>Friday</td>
-					<td><%= @vendor.fri_open %></td>
-					<td><%= @vendor.fri_close %></td>
+					<% if @vendor.fri_open.nil? %>
+						<td> Closed</td>
+						<td> Closed</td>
+					<% else %>
+						<td><%= @vendor.fri_open %></td>
+						<td><%= @vendor.fri_close %></td>
+					<% end %>
 				</tr>
 				<tr>
 					<td>Saturday</td>
-					<td><%= @vendor.sat_open %></td>
-					<td><%= @vendor.sat_close %></td>
+					<% if @vendor.sat_open.nil? %>
+						<td> Closed</td>
+						<td> Closed</td>
+					<% else %>
+						<td><%= @vendor.sat_open %></td>
+						<td><%= @vendor.sat_close %></td>
+					<% end %>
 				</tr>
 		</tbody>
 	</table>

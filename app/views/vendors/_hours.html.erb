@@ -10,7 +10,7 @@
 		<tbody>
 				<tr>
 					<td>Sunday</td>
-					<% if @vendor.sun_open.nil? %>
+					<% if @vendor.sun_open.blank? %>
 						<td> Closed</td>
 						<td> Closed</td>
 					<% else %>
@@ -20,7 +20,7 @@
 				</tr>
 				<tr>
 					<td>Monday</td>
-					<% if @vendor.mon_open.nil? %>
+					<% if @vendor.mon_open.blank? %>
 						<td> Closed</td>
 						<td> Closed</td>
 					<% else %>
@@ -30,7 +30,7 @@
 				</tr>
 				<tr>
 					<td>Tuesday</td>
-					<% if @vendor.tues_open.nil? %>
+					<% if @vendor.tues_open.blank? %>
 						<td> Closed</td>
 						<td> Closed</td>
 					<% else %>
@@ -40,7 +40,7 @@
 				</tr>
 				<tr>
 					<td>Wednesday</td>
-					<% if @vendor.weds_open.nil? %>
+					<% if @vendor.weds_open.blank? %>
 						<td> Closed</td>
 						<td> Closed</td>
 					<% else %>
@@ -50,7 +50,7 @@
 				</tr>
 				<tr>
 					<td>Thursday</td>
-					<% if @vendor.thurs_open.nil? %>
+					<% if @vendor.thurs_open.blank? %>
 						<td> Closed</td>
 						<td> Closed</td>
 					<% else %>
@@ -60,7 +60,7 @@
 				</tr>
 				<tr>
 					<td>Friday</td>
-					<% if @vendor.fri_open.nil? %>
+					<% if @vendor.fri_open.blank? %>
 						<td> Closed</td>
 						<td> Closed</td>
 					<% else %>
@@ -70,7 +70,7 @@
 				</tr>
 				<tr>
 					<td>Saturday</td>
-					<% if @vendor.sat_open.nil? %>
+					<% if @vendor.sat_open.blank? %>
 						<td> Closed</td>
 						<td> Closed</td>
 					<% else %>

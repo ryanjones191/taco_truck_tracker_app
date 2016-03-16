@@ -36,6 +36,7 @@
 	</aside>
 	<div class="col-md-4">
 		<%= link_to "Write a Review", new_vendor_review_path(@vendor), class: "btn btn-primary" %>
+    <%= render 'vendors/hours' %>
 	</div>
 	<div class="col-md-4">
     <% if @reviews.blank? %>

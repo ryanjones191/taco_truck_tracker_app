@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   root                          'vendors#index'
   get    'welcome'        =>    'pages#home'
   get    'about'          =>    'pages#about'
-  get    'contact'        =>    'pages#contact'
+  get    'contact'        =>    'messages#new'
+  post   'contact'        =>    'messages#create'
   get    'signup'         =>    'users#new'
   get    'login'          =>    'user_sessions#new'
   post   'login'          =>    'user_sessions#create'
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   get    'vendor_login'          =>    'vendor_sessions#new'
   post   'vendor_login'          =>    'vendor_sessions#create'
   delete 'vendor_logout'         =>    'vendor_sessions#destroy'
+  
 
   resources :users
   resources :vendors do
